@@ -5,3 +5,4 @@
 - Sperrvermerk
 - Rechtssprechungsverzeichnis
 - Formel- und Symbolverzeichnis
+- Monospaced Schriftart
