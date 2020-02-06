@@ -1,0 +1,215 @@
+% Präambel
+\documentclass[
+    a4paper,
+    12pt,
+    listof=totoc,
+    toc=chapterentrydotfill
+]{scrartcl}
+
+% Allgemeine Pakete
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[ngerman]{translator}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage[pdfborder={0 0 0}]{hyperref}
+\usepackage{footnote}
+\usepackage{colortbl}
+\usepackage{lscape}
+\usepackage{makeidx}
+\usepackage{ragged2e}
+\usepackage{verbatim}
+\usepackage{listings}
+\usepackage{marvosym}
+\usepackage{svg}
+\usepackage[autostyle=true,german=quotes]{csquotes}
+\usepackage[printonlyused]{acronym}
+\usepackage{xpatch}
+\usepackage[figure,table]{totalcount}
+
+% Meta-Informationen
+\newcommand{\metaTitel}{\LaTeX{} Vorlage für eine Hausarbeit gemäß der Richtlinien der FOM.}
+\newcommand{\metaAutor}{Theodor Test}
+\newcommand{\metaMatrikelNr}{123456}
+\newcommand{\metaBetreuer}{Prof.\ Dr.\ Siegbert Schnösel}
+\newcommand{\metaAbgabe}{01. Januar 1970}
+\newcommand{\metaStandort}{Hochschulzentrum Essen}
+\newcommand{\metaOrt}{Essen}
+\newcommand{\metaStudiengang}{Bachelor of Science in Prokrastination}
+\newcommand{\metaSemester}{12}
+\newcommand{\metaModul}{Procrastination Basics}
+
+% Formatierung
+\usepackage[
+    left=   4.0cm,
+    right=  2.0cm,
+    top=    4.0cm,
+    bottom= 2.0cm
+]{geometry}
+\setlength{\parindent}{0mm}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\sloppy
+
+% Schriftart
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\setmainfont[
+    Path            = fonts/,
+    Extension       = .ttf,
+    UprightFont     = *-Regular,
+    ItalicFont      = *-Italic,
+    BoldFont        = *-Bold,
+    BoldItalicFont  = *-BoldItalic
+]{LiberationSerif}
+\setsansfont[
+    Path            = fonts/,
+    Extension       = .ttf,
+    UprightFont     = *-Regular,
+    ItalicFont      = *-Italic,
+    BoldFont        = *-Bold,
+    BoldItalicFont  = *-BoldItalic
+]{LiberationSerif}
+\usepackage[onehalfspacing]{setspace}
+
+% Silbentrennung
+\usepackage{hyphsubst}
+\HyphSubstIfExists{ngerman-x-latest}{
+\HyphSubstLet{ngerman}{ngerman-x-latest}}{}
+
+% Counter
+\setcounter{tocdepth}{3}
+
+% PDF Metadaten
+\hypersetup{
+    pdfinfo={
+        Title={\metaTitel},
+        Subject={\metaStudiengang},
+        Author={\metaAutor},
+    }
+}
+
+% Kopfzeile
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\thepage}
+
+%% Literaturmanagement
+\usepackage[
+    autocite=footnote,
+    backend=biber,
+    bibstyle=ext-authoryear,
+    citestyle=authortitle,
+    dashed=false,
+    date=year,
+    dateabbrev=false,
+    giveninits=true,
+    innamebeforetitle=true,
+    maxbibnames=999,
+    maxcitenames=3,
+    mergedate=false,
+    mincrossrefs=1,
+    seconds=true,
+    uniquename=init,
+    urldate=long
+]{biblatex}
+\addbibresource{literatur/literatur.bib}
+% Fußnoten
+\renewcommand{\multicitedelim}{;\space}
+\DeclareNameAlias{labelname}{family-given}
+\xapptobibmacro{cite}{\setunit{\nametitledelim}\printfield{year}}{}{}
+% Literaturverzeichnis
+\setlength\bibhang{1cm}
+\setlength{\bibitemsep}{0.75cm}
+\renewcommand*{\finentrypunct}{}
+% Quelle unter Abbildungen
+\newcommand*{\quelle}[1]{\par\raggedleft\footnotesize Quelle:~\cite{#1}}
+
+
+
+% Inhalt ------------------------------------------------------
+\begin{document}
+    \lhead{\nouppercase{\leftmark}}
+    \pagenumbering{Roman}
+    %TC:ignore
+
+    % Titelblatt
+    \begin{titlepage}
+        \begin{center}
+            \begin{large}
+                \includegraphics[width=5cm]{abbildungen/fom-logo.png}\\
+                \vspace{1.5cm}
+                \textbf{FOM {--} Hochschule für Oekonomie und Management}\\
+                \metaStandort{}\\
+                \vspace{1.0cm}
+                Berufsbegleitender Studiengang zum\\
+                \metaStudiengang{}\\
+                \vspace{1.0cm}
+                \metaSemester{}. Semester\\
+                Hausarbeit im Modul\\
+                \textbf{\metaModul{}}\\
+                zum Thema\\
+            \end{large}
+            \vspace{1.5cm}
+            \begin{Large}
+                \textbf{\metaTitel{}}
+            \end{Large}
+        \end{center}
+        \vfill
+        \begin{tabbing}
+            Links \= Mitte \= Mittez \= Rechts \kill
+            Betreuer: \> \> \> \metaBetreuer{}\\
+            Autor: \> \> \> \metaAutor{}\\
+            Matrikelnr.: \> \> \> \metaMatrikelNr{}\\
+            Abgabedatum: \> \> \> \metaAbgabe{}
+        \end{tabbing}
+    \end{titlepage}
+    \newpage
+
+    % Inhaltsverzeichnis
+    \tableofcontents
+    \newpage
+
+    % Abbildungsverzeichnis
+    \iftotalfigures{}
+        \listoffigures
+        \newpage
+    \fi
+
+    % Tabellenverzeichnis
+    \iftotaltables{}
+        \listoftables
+        \newpage
+    \fi
+
+    % Abkürzungsverzeichnis
+    \lhead{Abkürzungsverzeichnis}
+    \include{verzeichnisse/abkuerzungsverzeichnis}
+    %TC:endignore
+
+
+    % Hauptteil
+    \setcounter{page}{1}
+    \pagenumbering{arabic}
+    \lhead{\nouppercase{\leftmark}}
+    \include{hauptteil/beispiel}
+
+
+    \pagenumbering{Roman}
+    \setcounter{page}{5}
+    %TC:ignore
+
+    % Literaturverzeichnisse
+    \togglefalse{abx@bool@giveninits}
+    \printbibliography[heading=bibintoc, nottype=online, title=Literaturverzeichnis]
+    \newpage
+    \printbibliography[type=online, title=Internetquellen]
+    \newpage
+
+    \pagenumbering{gobble}
+
+    % Ehrenwörtliche Erklärung
+    \lhead{Ehrenwörtliche Erklärung}
+    \include{erklaerungen/ehrenwoertliche_erklaerung}
+    %TC:endignore
+\end{document}
