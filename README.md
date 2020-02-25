@@ -6,3 +6,6 @@
 - [ ] Rechtssprechungsverzeichnis
 - [ ] Formel- und Symbolverzeichnis
 - [ ] Monospaced Schriftart
+- [ ] Automatisch fortlaufende römische Seitenzahlen
+- [ ] Duplizierte Jahreszahl im Literaturverzeichnis entfernen
+- [ ] Quelle direkt unter der Abbildung zitieren
