@@ -93,6 +93,10 @@
 \fancyhf{}
 \rhead{\thepage}
 
+% Glossar
+\usepackage[toc]{glossaries}
+\makeglossaries{}
+
 %% Literaturmanagement
 \usepackage[
     autocite=footnote,
@@ -184,6 +188,10 @@
     % Abkürzungsverzeichnis
     \lhead{Abkürzungsverzeichnis}
     \include{verzeichnisse/abkuerzungsverzeichnis}
+
+    % Glossar
+    \lhead{Glossar}
+    \include{verzeichnisse/glossar}
     %TC:endignore
 
 
@@ -191,7 +199,7 @@
     \setcounter{page}{1}
     \pagenumbering{arabic}
     \lhead{\nouppercase{\leftmark}}
-    \include{hauptteil/beispiel}
+    % \include{hauptteil/beispiel}
 
 
     \pagenumbering{Roman}
