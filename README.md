@@ -3,7 +3,6 @@
 - [x] Glossar
 - [ ] Anlagen
 - [x] Sperrvermerk
-- [ ] Rechtssprechungsverzeichnis
 - [ ] Formel- und Symbolverzeichnis
 - [ ] Monospaced Schriftart
 - [ ] Automatisch fortlaufende römische Seitenzahlen
