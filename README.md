@@ -1,4 +1,6 @@
-# Eine LaTeX-Vorlage für eine Hausarbeit gemäß der Richtlinien der FOM.
+# Eine LaTeX-Vorlage für eine nicht juristische Hausarbeit gemäß der Richtlinien der FOM.
+Auf juristische Arbeiten wird in dieser Vorlage eher keine Rücksicht genommen.
+Für einen solchen Zweck ist die Dokumentklasse *jura* vermutlich besser geeignet.
 ## To-Do
 - [x] Glossar
 - [ ] Anlagen
