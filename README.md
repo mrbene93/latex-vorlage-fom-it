@@ -2,7 +2,7 @@
 ## To-Do
 - [x] Glossar
 - [ ] Anlagen
-- [ ] Sperrvermerk
+- [x] Sperrvermerk
 - [ ] Rechtssprechungsverzeichnis
 - [ ] Formel- und Symbolverzeichnis
 - [ ] Monospaced Schriftart
