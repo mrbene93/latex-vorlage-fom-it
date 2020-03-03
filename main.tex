@@ -26,6 +26,7 @@
 \usepackage[printonlyused]{acronym}
 \usepackage{xpatch}
 \usepackage[figure,table]{totalcount}
+\usepackage{calc}
 
 % Meta-Informationen
 \newcommand{\metaTitel}{\LaTeX{} Vorlage für eine Hausarbeit gemäß der Richtlinien der FOM.}
@@ -126,7 +127,7 @@
 \setlength{\bibitemsep}{0.75cm}
 \renewcommand*{\finentrypunct}{}
 % Quelle unter Abbildungen
-\newcommand*{\quelle}[1]{\par\raggedleft\footnotesize Quelle:~\cite{#1}}
+\newcommand*{\abbcite}[1]{\par\raggedleft\footnotesize Quelle:~\cite{#1}}
 
 
 
@@ -194,6 +195,10 @@
     \lhead{Sperrvermerk}
     \include{erklaerungen/sperrvermerk}
 
+    % Römische Seitenzahlen werden später weitergezählt
+    \newcounter{fort}
+    \setcounter{fort}{\value{page}}
+
 
     % Hauptteil
     \setcounter{page}{1}
@@ -202,8 +207,9 @@
     % \include{hauptteil/beispiel}
 
 
+    % Römische Seitenzahlen fortfahren
     \pagenumbering{Roman}
-    \setcounter{page}{5}
+    \setcounter{page}{\value{fort}}
     %TC:ignore
 
     % Literaturverzeichnisse
