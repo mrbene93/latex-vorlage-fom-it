@@ -9,5 +9,5 @@ Für einen solchen Zweck ist die Dokumentklasse *jura* vermutlich besser geeigne
 - [ ] Monospaced Schriftart
 - [x] Automatisch fortlaufende römische Seitenzahlen
 - [ ] Duplizierte Jahreszahl im Literaturverzeichnis entfernen
-- [ ] Quelle direkt unter der Abbildung zitieren
+- [x] Quelle direkt unter der Abbildung zitieren
 - [ ] Beispielkapitel
