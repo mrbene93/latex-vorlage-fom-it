@@ -7,6 +7,6 @@ Dies schließt beispielsweise ein Formel- und Symbolverzeichnis ein.
 - [x] Sperrvermerk
 - [ ] Monospaced Schriftart
 - [x] Automatisch fortlaufende römische Seitenzahlen
-- [ ] Duplizierte Jahreszahl im Literaturverzeichnis entfernen
+- [x] Duplizierte Jahreszahl im Literaturverzeichnis entfernen
 - [x] Quelle direkt unter der Abbildung zitieren
 - [ ] Beispielkapitel

@@ -133,7 +133,8 @@
 \xapptobibmacro{cite}{\setunit{\nametitledelim}\printfield{year}}{}{}
 % Literaturverzeichnis
 \setlength\bibhang{1cm}
-\setlength{\bibitemsep}{0.75cm}
+\setlength{\bibinitsep}{0.75cm}
+\renewcommand*{\newunitpunct}{, }
 \renewcommand*{\finentrypunct}{}
 % Quelle unter Abbildungen
 \newcommand*{\abbcite}[1]{\par\raggedleft\footnotesize Quelle:~\cite{#1}}
