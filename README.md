@@ -5,7 +5,7 @@ Dies schließt beispielsweise ein Formel- und Symbolverzeichnis ein.
 - [x] Glossar
 - [ ] Anlagen
 - [x] Sperrvermerk
-- [ ] Monospaced Schriftart
+- [x] Monospaced Schriftart
 - [x] Automatisch fortlaufende römische Seitenzahlen
 - [x] Duplizierte Jahreszahl im Literaturverzeichnis entfernen
 - [x] Quelle direkt unter der Abbildung zitieren
