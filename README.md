@@ -3,7 +3,7 @@ Diese Vorlage wurde mit dem Studiengang Wirtschaftsinformatik im Hinterkopf entw
 Dies schließt beispielsweise ein Formel- und Symbolverzeichnis ein.
 ## To-Do
 - [x] Glossar
-- [ ] Anlagen
+- [x] Anlagen
 - [x] Sperrvermerk
 - [x] Monospaced Schriftart
 - [x] Automatisch fortlaufende römische Seitenzahlen
