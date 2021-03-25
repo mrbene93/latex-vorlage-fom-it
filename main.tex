@@ -7,26 +7,27 @@
 ]{scrartcl}
 
 % Allgemeine Pakete
-\usepackage[utf8]{inputenc}
-\usepackage[ngerman]{babel}
-\usepackage[ngerman]{translator}
-\usepackage{fancyhdr}
-\usepackage{graphicx}
-\usepackage{color}
-\usepackage[pdfborder={0 0 0}]{hyperref}
-\usepackage{footnote}
-\usepackage{colortbl}
-\usepackage{lscape}
-\usepackage{makeidx}
-\usepackage{ragged2e}
-\usepackage{verbatim}
-\usepackage{listings}
-\usepackage{marvosym}
-\usepackage[autostyle=true,german=quotes]{csquotes}
-\usepackage[printonlyused]{acronym}
-\usepackage{xpatch}
-\usepackage[figure,table]{totalcount}
-\usepackage{calc}
+\usepackage[utf8]{inputenc}                             % UTF-8, Umlaute
+\usepackage[ngerman]{babel}                             % Deutsche Bezeichnungen
+\usepackage[ngerman]{translator}                        % Deutsche Bezeichnungen
+\usepackage{fancyhdr}                                   % Manipulation Kopf- & Fußzeile
+\usepackage{graphicx}                                   % Unterstützung für Grafiken
+\usepackage{color}                                      % Farbverwaltung
+\usepackage[pdfborder={0 0 0}]{hyperref}                % Erzeugung von URLs
+\usepackage{footnote}                                   % Verwaltung von Fußnoten
+\usepackage{colortbl}                                   % Farben für Tabellen
+\usepackage{lscape}                                     % Querformat
+\usepackage{makeidx}                                    % Indexerstellung
+\usepackage{ragged2e}                                   % Textausrichtung
+\usepackage{verbatim}                                   % Kommentarumgebung
+\usepackage{marvosym}                                   % Symbolschriftart
+\usepackage[autostyle=true,german=quotes]{csquotes}     % Anführungszeichen-Stil
+\usepackage[printonlyused]{acronym}                     % Abkürzungsverzeichnis
+\usepackage{xpatch}                                     % Macro Patching
+\usepackage[figure,table]{totalcount}                   % Zähler
+\usepackage{calc}                                       % Arithmetische Befehle
+\usepackage{tabularx}                                   % Benutzerdefinierbare Tabellen
+\usepackage{booktabs}                                   % Tabellen
 
 % Meta-Informationen
 \newcommand{\metaTitel}{\LaTeX{} Vorlage für eine Hausarbeit gemäß der Richtlinien der FOM.}
@@ -51,7 +52,7 @@
 \setlength{\parskip}{6pt plus 2pt minus 1pt}
 \sloppy
 
-% Schriftart
+% Schriftarten
 \usepackage[T1]{fontenc}
 \usepackage{fontspec}
 \setmainfont[
@@ -70,6 +71,14 @@
     BoldFont        = *-Bold,
     BoldItalicFont  = *-BoldItalic
 ]{LiberationSerif}
+\setmonofont[
+    Path            = fonts/,
+    Extension       = .ttf,
+    UprightFont     = *-Regular,
+    ItalicFont      = *-Italic,
+    BoldFont        = *-Bold,
+    BoldItalicFont  = *-BoldItalic
+]{LiberationMono}
 \usepackage[onehalfspacing]{setspace}
 
 % Silbentrennung
@@ -110,6 +119,30 @@
 % Sektionsnummerierungen ohne abschließenden Punkt
 \renewcommand*{\autodot}{}
 
+% Syntax Highlighting
+\usepackage{listings}
+\definecolor{light-gray}{gray}{0.95}
+\definecolor{dark-gray}{gray}{0.4}
+\lstset{
+    backgroundcolor=\color{light-gray},
+    basicstyle=\ttfamily\scriptsize,
+    breakatwhitespace=false,
+    breaklines=true,
+    commentstyle=\color{dark-gray},
+    extendedchars=true,
+    keepspaces=true,
+    keywordstyle=\color{blue},
+    language=Python,
+    numbers=none,
+    numbersep=5pt,
+    numberstyle=\scriptsize\color{dark-gray},
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    stringstyle=\color{red},
+    tabsize=4
+}
+
 %% Literaturmanagement
 \usepackage[
     autocite=footnote,
@@ -142,6 +175,7 @@
 \renewcommand*{\UrlFont}{\ttfamily\small}
 % Quelle unter Abbildungen
 \newcommand*{\abbcite}[1]{\par\raggedleft\footnotesize Quelle:~\cite{#1}}
+\newcommand*{\abbeig}{\par\raggedleft\footnotesize Quelle: Eigene Darstellung}
 
 
 
