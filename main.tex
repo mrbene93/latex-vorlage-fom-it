@@ -87,7 +87,8 @@
 \HyphSubstLet{ngerman}{ngerman-x-latest}}{}
 
 % Counter
-\setcounter{tocdepth}{3}
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
 
 % PDF Metadaten
 \hypersetup{
@@ -148,7 +149,7 @@
     autocite=footnote,
     backend=biber,
     bibstyle=ext-authoryear,
-    citestyle=authortitle,
+    citestyle=ext-authoryear,
     dashed=false,
     date=year,
     dateabbrev=false,
@@ -166,7 +167,7 @@
 % Fußnoten
 \renewcommand{\multicitedelim}{;\space}
 \DeclareNameAlias{labelname}{family-given}
-\xapptobibmacro{cite}{\setunit{\nametitledelim}\printfield{year}}{}{}
+\DeclareInnerCiteDelims{footcite}{\bibopenparen}{\bibcloseparen}
 % Literaturverzeichnis
 \setlength\bibhang{1cm}
 \setlength{\bibinitsep}{0.75cm}
@@ -175,7 +176,6 @@
 \renewcommand*{\UrlFont}{\ttfamily\small}
 % Quelle unter Abbildungen
 \newcommand*{\abbcite}[1]{\par\raggedleft\footnotesize Quelle:~\cite{#1}}
-\newcommand*{\abbeig}{\par\raggedleft\footnotesize Quelle: Eigene Darstellung}
 
 
 
@@ -183,6 +183,7 @@
 \begin{document}
     \lhead{\nouppercase{\leftmark}}
     \pagenumbering{Roman}
+
     %TC:ignore
 
     % Titelblatt
@@ -218,6 +219,10 @@
     \end{titlepage}
     \newpage
 
+    % Sperrvermerk
+    \lhead{Sperrvermerk}
+    \include{erklaerungen/sperrvermerk}
+
     % Inhaltsverzeichnis
     \tableofcontents
     \newpage
@@ -234,14 +239,8 @@
     \lhead{Abkürzungsverzeichnis}
     \include{verzeichnisse/abkuerzungsverzeichnis}
 
-    % Glossar
-    \lhead{Glossar}
-    \include{verzeichnisse/glossar}
-    %TC:endignore
 
-    % Sperrvermerk
-    \lhead{Sperrvermerk}
-    \include{erklaerungen/sperrvermerk}
+    %TC:endignore
 
     % Römische Seitenzahlen werden später weitergezählt
     \newcounter{fort}
@@ -258,12 +257,13 @@
     % Römische Seitenzahlen fortfahren
     \pagenumbering{Roman}
     \setcounter{page}{\value{fort}}
+
+
     %TC:ignore
 
-    % Anhänge
+    % Nachspann
     \appendix
     \setcounter{secnumdepth}{0}
-    % \include{anhang/anhang}
 
     % Literaturverzeichnisse
     \togglefalse{abx@bool@giveninits}
@@ -272,10 +272,18 @@
     \printbibliography[type=online, title=Internetquellen]
     \newpage
 
+    % Anhänge
+    % \include{anhang/anhang}
+
+    % Glossar
+    \lhead{Glossar}
+    \include{verzeichnisse/glossar}
+
     \pagenumbering{gobble}
 
     % Ehrenwörtliche Erklärung
     \lhead{Ehrenwörtliche Erklärung}
     \include{erklaerungen/ehrenwoertliche_erklaerung}
+
     %TC:endignore
 \end{document}
