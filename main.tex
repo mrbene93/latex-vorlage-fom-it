@@ -155,7 +155,7 @@
     dateabbrev=false,
     giveninits=true,
     innamebeforetitle=true,
-    maxbibnames=999,
+    maxbibnames=99,
     maxcitenames=3,
     mergedate=false,
     mincrossrefs=1,
@@ -167,11 +167,12 @@
 % Fußnoten
 \renewcommand{\multicitedelim}{;\space}
 \DeclareNameAlias{labelname}{family-given}
+\DeclareNameAlias{sortname}{family-given}
 \DeclareInnerCiteDelims{footcite}{\bibopenparen}{\bibcloseparen}
 % Literaturverzeichnis
 \setlength\bibhang{1cm}
 \setlength{\bibinitsep}{0.75cm}
-\renewcommand*{\newunitpunct}{, }
+\renewcommand*{\newunitpunct}{. }
 \renewcommand*{\finentrypunct}{}
 \renewcommand*{\UrlFont}{\ttfamily\small}
 % Quelle unter Abbildungen
